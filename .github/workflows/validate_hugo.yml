@@ -1,0 +1,19 @@
+name: Run content validation
+
+on:
+  workflow_run:
+    workflows: ["Prepare environment"]
+    types:
+      - completed
+
+jobs:
+  validate_content:
+    name: Validate content changes
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./src
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: Docker images
+        run: docker images
