@@ -2,7 +2,9 @@
 title: "Home"
 ---
 
-{{< atlas-logo-bad >}}
+{{< atlas-logo >}}
+
+I hate YAML folding lines!
 
 Welcome to the IoT Atlas, where successful journeys using the Internet of Things (IoT) rely on maps.
 
