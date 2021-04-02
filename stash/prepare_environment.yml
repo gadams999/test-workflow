@@ -1,8 +1,10 @@
 name: Prepare environment
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: ["Pull request verify"]
+    types:
+      - completed
 
 jobs:
   create_hugo_container:

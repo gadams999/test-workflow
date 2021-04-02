@@ -1,0 +1,17 @@
+name: Pull request verify
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  create_hugo_container:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./src
+    name: Create Hugo container
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: dir
+        run: ls
