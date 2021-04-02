@@ -29,6 +29,8 @@ jobs:
             });
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/pr.zip', Buffer.from(download.data));
+      - name: Unzip artifact
+        run: unzip pr.zip
       - name: Display structure of downloaded files
         run: ls -R
       - name: Content has successfully PASSED validation
