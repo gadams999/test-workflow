@@ -1,5 +1,4 @@
-making changes
-
+change 2
 ## IoT Atlas
 
 This repository contains the content of the [IoT Atlas](http://iotatlas.net)
