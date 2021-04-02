@@ -44,14 +44,13 @@ jobs:
       - name: Validate Hugo content, internal, and external web links
         run: ./make_hugo.sh -v
         working-directory: ${{env.working-directory}}
-
+      # These steps should always run
       - name: Save PR number
-        # Always run to pass the PR# to the next process
         if: success() || failure()
         run: |
-          mkdir -p ./pr
-          echo ${{ github.event.number }} > ./pr/NR
+          mkdir -p /tmp/pr
+          echo ${{ github.event.number }} > /tmp/pr/NR
       - uses: actions/upload-artifact@v2
         with:
           name: pr
-          path: pr/
+          path: /tmp/pr/
