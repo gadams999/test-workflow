@@ -46,6 +46,8 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - name: Save PR number
+        # Always run to pass the PR# to the next process
+        if: succeeded() || failed()
         run: |
           mkdir -p ./pr
           echo ${{ github.event.number }} > ./pr/NR
