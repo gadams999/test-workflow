@@ -50,7 +50,9 @@ jobs:
         run: |
           mkdir -p /tmp/pr
           echo ${{ github.event.number }} > /tmp/pr/NR
-      - uses: actions/upload-artifact@v2
+      - name: Upload pr artifact
+        if: success() || failure()
+        uses: actions/upload-artifact@v2
         with:
           name: pr
           path: /tmp/pr
