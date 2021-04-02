@@ -15,5 +15,12 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
+      - name: Download docker artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: hugo_image
+          path: /tmp/hugo_image.tar
+      - name: Load docker image
+        run: docker load --input /tmp/myimage.tar
       - name: Docker images
-        run: docker images
+        run: docker image ls -a
