@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-{{< atlas-logo-really-bad >}}
+{{< atlas-logo-justbad >}}
 
 Welcome to the IoT Atlas, where successful journeys using the Internet of Things (IoT) rely on maps.
 
